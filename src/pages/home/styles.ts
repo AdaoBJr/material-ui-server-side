@@ -14,7 +14,7 @@ export const SxSubTitleHome: SxProps<Theme> = {
 };
 
 export const SxButtonHome: SxProps<Theme> = {
-  backgroundColor: 'warning.main',
+  backgroundColor: 'secondary.main',
   paddingX: 3,
   paddingY: 7,
   width: { xs: '100%', sm: '220px' },
@@ -22,7 +22,4 @@ export const SxButtonHome: SxProps<Theme> = {
   borderRadius: '6px',
   textTransform: 'initial',
   fontSize: ({ spacing }) => spacing(5),
-  '&:hover': {
-    backgroundColor: 'warning.dark',
-  },
 };

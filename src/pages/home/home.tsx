@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   return (
     <Body>
       <Grid container spacing={10}>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} md={6}>
           <Stack rowGap={7} marginLeft={{ xs: 0, sm: 12 }}>
             <Title variant="h1" sx={SxTitleHome}>
               {home.title}
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
             </Button>
           </Stack>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} md={6} marginLeft={{ xs: 12, sm: 0 }}>
           <Box sx={{ width: { xs: '100%', sm: '460px' } }}>
             <Image src={calendar} alt="imagem de calendário" style={{ width: '100%' }} />
           </Box>
