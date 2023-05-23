@@ -32,6 +32,7 @@ export const theme = createTheme(
         '100': '#E1E1E6',
         '200': '#A9A9B2',
         '400': '#7C7C8A',
+        '500': '#323238',
         '600': '#323238',
         '800': '#202024',
         '900': '#121214',
@@ -71,7 +72,7 @@ export const theme = createTheme(
       },
     },
     shape: {
-      borderRadius: 8,
+      borderRadius: 2.5,
     },
     components: {
       MuiButton: {

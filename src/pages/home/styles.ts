@@ -12,14 +12,3 @@ export const SxTitleHome: SxProps<Theme> = {
 export const SxSubTitleHome: SxProps<Theme> = {
   fontSize: ({ spacing }) => spacing(6),
 };
-
-export const SxButtonHome: SxProps<Theme> = {
-  backgroundColor: 'secondary.main',
-  paddingX: 3,
-  paddingY: 7,
-  width: { xs: '100%', sm: '220px' },
-  height: '46px',
-  borderRadius: '6px',
-  textTransform: 'initial',
-  fontSize: ({ spacing }) => spacing(5),
-};

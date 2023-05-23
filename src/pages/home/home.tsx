@@ -1,11 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import { Box, Button, Grid, Stack } from '@mui/material';
+import { Box, Grid, Stack } from '@mui/material';
 
 import { home } from 'articles';
 import { Body, Title } from 'lib/shared';
+import ClaimUserName from './components/ClaimUserName';
 import calendar from 'assets/images/calendar.png';
-import { SxTitleHome, SxButtonHome, SxSubTitleHome } from './styles';
+import { SxTitleHome, SxSubTitleHome } from './styles';
 
 const Home: React.FC = () => {
   return (
@@ -19,12 +20,10 @@ const Home: React.FC = () => {
             <Title variant="body2" sx={SxSubTitleHome}>
               {home.subTitle}
             </Title>
-            <Button variant="contained" sx={SxButtonHome}>
-              {home.button}
-            </Button>
+            <ClaimUserName />
           </Stack>
         </Grid>
-        <Grid item xs={12} md={6} marginLeft={{ xs: 12, sm: 0 }}>
+        <Grid item xs={12} md={6} marginLeft={{ sm: 12, md: 0 }}>
           <Box sx={{ width: { xs: '100%', sm: '460px' } }}>
             <Image src={calendar} alt="imagem de calendário" style={{ width: '100%' }} />
           </Box>
