@@ -3,7 +3,8 @@ import { ptBR } from '@mui/material/locale';
 
 export const theme = createTheme(
   {
-    spacing: 16,
+    //        0  1  2  3   4   5   6   7   8   9   10  11  12  13
+    spacing: [0, 4, 8, 12, 14, 16, 20, 24, 32, 40, 48, 56, 64, 80],
     breakpoints: {
       values: {
         xs: 0,
@@ -16,52 +17,55 @@ export const theme = createTheme(
     palette: {
       mode: 'light',
       primary: {
-        main: '#F37920',
-        dark: '#E9680C',
-        light: '#FA933B',
+        main: '#00B37E',
+        dark: '#007d58',
+        light: '#33c297',
         contrastText: '#fff',
       },
       secondary: {
-        main: '#DCEE28',
-        dark: '#D1E212',
-        light: '#E4F155',
+        main: '#00875F',
+        dark: '#005e42',
+        light: '#339f7f',
         contrastText: '#fff',
       },
-      info: {
-        main: '#9E9E9E',
-        light: '#BDBDBD',
-        dark: '#424242',
+      grey: {
+        '100': '#E1E1E6',
+        '200': '#A9A9B2',
+        '400': '#7C7C8A',
+        '600': '#323238',
+        '800': '#202024',
+        '900': '#121214',
+        A100: '#383838',
+        A200: '#262626',
       },
       background: {
         default: '#FAFAFA',
         paper: '#fff',
       },
-      warning: {
-        main: '#ed6c02',
-        light: '#FEF4EB',
-      },
-      error: {
-        main: '#FF2F2F',
-      },
       text: {
-        secondary: '#666666',
+        primary: '#fff',
+      },
+      warning: {
+        main: '#DB4437',
+        dark: '#992f26',
+        light: '#e2695f',
       },
     },
     typography: {
-      fontFamily: ['Inter', 'sans-serif'].join(','),
-      h6: {
+      fontFamily: ['Roboto', 'sans-serif'].join(','),
+      h1: {
         fontSize: '1rem',
-        color: '#333333',
-        fontWeight: 700,
+        color: '#fff',
+        fontWeight: 800,
         lineHeight: 1.5,
       },
       body1: {
-        color: '#424242',
+        color: '#fff',
         fontWeight: 400,
         fontSize: '1rem',
       },
       body2: {
-        color: '#666666',
+        color: '#A9A9B2',
         fontWeight: 400,
         fontSize: '1rem',
       },
