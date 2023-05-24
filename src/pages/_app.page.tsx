@@ -1,10 +1,11 @@
 import React from 'react';
-
 import Head from 'next/head';
+import { Box } from '@mui/material';
 import { AppProps as AppPropsNext } from 'next/app';
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import { CacheProvider, EmotionCache } from '@emotion/react';
+
+import { SxApp } from './app.styles';
 import { theme, createEmotionCache } from 'theme';
 
 const clientSideEmotionCache = createEmotionCache();
@@ -24,7 +25,9 @@ const App: React.FC<AppProps> = ({
     </Head>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Component {...pageProps} />
+      <Box sx={SxApp}>
+        <Component {...pageProps} />
+      </Box>
     </ThemeProvider>
   </CacheProvider>
 );
