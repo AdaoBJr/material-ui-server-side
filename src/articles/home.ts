@@ -1,5 +1,4 @@
 export const home = {
   title: 'Agendamento descomplicado',
-  subTitle:
-    'Conecte seu calendário e permita que as pessoas marquem agendamentos no seu tempo livre.',
+  subTitle: 'Rastrei seu produto e agende a retirada de acordo com seu tempo livre.',
 };
