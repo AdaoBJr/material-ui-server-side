@@ -1,28 +1,14 @@
-/**
- * Esse arquivo resolve as variáveis de ambiente no contexto docker e desenvolvimento local.
- * No caso do Docker, ele funciona em conjunto ao env.template.js. Toda variável presente nesse arquivo precisa
- * de um config relativa no arquivo env.template.js.
- * IMPORTANTE: nunca configure informações sensíveis nas variáveis de ambiente do frontend, pois tudo que está no client é público!
- */
-declare const process: any;
-/*istanbul ignore next*/
-function isBrowser(): boolean {
-  try {
-    return typeof window !== 'undefined';
-  } catch (e) {
-    return false;
-  }
-}
-/*istanbul ignore next*/
-const isDevelopment = process.env.NODE_ENV === 'development';
-/*istanbul ignore next*/
-const ENV =
-  isBrowser() && !isDevelopment ? (window as any)['SN-GESTAO-VENDA'] : process.env; // resolve variáveis de ambiente no contexto Docker
-
+type ServerEnv = 'local' | 'dev' | 'tst' | 'prd';
 export interface Environment {
-  SERVER_ENV: 'local' | 'dev' | 'tst' | 'prd';
+  SERVER_ENV: ServerEnv;
   URL_ESTOQUE: string;
 }
+
+const ENV = {
+  SERVER_ENV: 'prd' as ServerEnv,
+  URL_ESTOQUE: 'https://api.mercadolibre.com/sites/MLB/search?category=categoryId&q=',
+};
+
 /*istanbul ignore next*/
 export const environment: Environment = {
   ...ENV,
