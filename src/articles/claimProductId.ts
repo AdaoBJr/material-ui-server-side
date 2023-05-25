@@ -1,6 +1,6 @@
 export const claim = {
   input: {
-    placeholder: 'id-produto',
+    placeholder: 'insira o produto',
   },
   button: 'Rastrear',
 };

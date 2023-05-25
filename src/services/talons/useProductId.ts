@@ -1,22 +1,25 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useRouter } from 'next/router';
-import { HttpResponse, apiBFF, useBFFVendas } from 'services/infra';
+import { useEffect, useState } from 'react';
+
 import { GetProduct } from 'types/domain';
+import { HttpResponse, useBFFVendas } from 'services/infra';
+import { useRouter } from 'next/router';
 
 export const useProductId = () => {
-  const { query } = useRouter();
+  const { isReady, query } = useRouter();
 
   const { getProductData } = useBFFVendas();
   const [data, setData] = useState<HttpResponse<GetProduct> | null>(null);
-  console.log('data', data);
+  const [isLoading, setIsLoading] = useState(true);
+
   const getProduct = async () => {
     const data = await getProductData(query.id as string);
+    setIsLoading(false);
     setData(data);
   };
 
   useEffect(() => {
-    getProduct();
-  }, []);
+    isReady && getProduct();
+  }, [isReady]);
 
-  return { data, getProduct };
+  return { isLoading, data };
 };
