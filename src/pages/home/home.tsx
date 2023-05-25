@@ -4,8 +4,8 @@ import { Box, Grid, Stack } from '@mui/material';
 
 import { home } from 'articles';
 import { Body, Title } from 'lib/shared';
-import ClaimUserName from './components/ClaimUserName';
 import calendar from 'assets/images/calendar.png';
+import ClaimProductId from './components/ClaimProductId';
 import { SxTitleHome, SxSubTitleHome } from './styles';
 
 const Home: React.FC = () => {
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
             <Title variant="body2" sx={SxSubTitleHome}>
               {home.subTitle}
             </Title>
-            <ClaimUserName />
+            <ClaimProductId />
           </Stack>
         </Grid>
         <Grid item xs={12} md={6} marginLeft={{ sm: 12, md: 0 }}>

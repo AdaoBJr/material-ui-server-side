@@ -4,18 +4,18 @@ import { ArrowForward } from '@mui/icons-material';
 import { DevTool } from '@hookform/devtools';
 
 import { claim } from 'articles';
-import { useClaimUserName } from './useClaimUserName';
+import { useClaimProductId } from './useClaimProductId';
 import { SxFormClaim, SxButtonClaim, SxInputClaim } from './styles';
 
-const ClaimUserName: React.FC = () => {
-  const { control, errors, msg, register, handleSubmit, handleClaimUsername } =
-    useClaimUserName();
+const ClaimProductId: React.FC = () => {
+  const { control, errors, msg, register, handleSubmit, handleClaimProductId } =
+    useClaimProductId();
 
   return (
     <Box
       component="form"
       sx={SxFormClaim}
-      onSubmit={handleSubmit(handleClaimUsername)}
+      onSubmit={handleSubmit(handleClaimProductId)}
       noValidate
     >
       <Grid container spacing={6}>
@@ -25,9 +25,9 @@ const ClaimUserName: React.FC = () => {
             autoComplete="off"
             placeholder={claim.input.placeholder}
             sx={SxInputClaim}
-            {...register('username', { required: msg.username })}
-            error={!!errors.username}
-            helperText={errors.username?.message}
+            {...register('productId', { required: msg.productId })}
+            error={!!errors.productId}
+            helperText={errors.productId?.message}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -47,4 +47,4 @@ const ClaimUserName: React.FC = () => {
   );
 };
 
-export default ClaimUserName;
+export default ClaimProductId;
