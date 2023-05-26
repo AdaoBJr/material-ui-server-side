@@ -1,7 +1,7 @@
 import { GetProduct } from 'types/domain';
 import { HttpStatusCode, useStockAPI } from 'services/infra';
 
-export const businessProduct = () => {
+export const productBusiness = () => {
   const { getStockData } = useStockAPI();
 
   interface ReturnGetProduct {

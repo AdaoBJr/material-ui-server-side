@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { HttpStatusCode } from 'services/infra';
-import { businessProduct } from 'services/business';
+import { productBusiness } from 'services/business';
 
 export default async function GET(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') return HttpStatusCode.methodNotAllowed;
-  const { getProduct } = businessProduct();
+  const { getProduct } = productBusiness();
   // const product = req.url?.split('/').pop()!;
   const product = req.query.id as string;
 
