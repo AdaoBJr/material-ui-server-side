@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios';
-import { HttpClient, HttpRequest, HttpResponse } from '../../protocols';
+import { HttpClient, HttpRequest, HttpResponse } from '../protocols';
 
 export class AxiosHttpClient implements HttpClient {
   private apiInstance: AxiosInstance;
@@ -16,8 +16,8 @@ export class AxiosHttpClient implements HttpClient {
         .request({
           url: this.commonUrl + data.url,
           method: data.method,
-          data: data.body,
-          ...data,
+          data: data.data,
+          ...data.options,
         })
         .then((response) =>
           resolve({

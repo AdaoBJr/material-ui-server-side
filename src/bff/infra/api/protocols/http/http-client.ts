@@ -1,7 +1,10 @@
 export type HttpRequest = {
   url: string;
   method: HttpMethod;
-  body?: Object;
+  data?: Object | string;
+  options?: {
+    headers?: Record<string, string>;
+  };
 };
 
 export interface HttpClient {
@@ -22,7 +25,7 @@ export enum HttpStatusCode {
   serverError = 500,
 }
 
-export type HttpResponse<T> = {
+export interface HttpResponse<T> {
   statusCode: HttpStatusCode;
   body: T;
-};
+}

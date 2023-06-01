@@ -1,85 +1,69 @@
-import { GetProduct } from 'backend/types';
-import { HttpStatusCode, stockAPI } from 'backend/core';
-
-interface ReturnGetProduct {
-  body: GetProduct;
-  statusCode: HttpStatusCode;
-}
+import { stockAPI } from 'bff/infra';
+import { apiErrorHandler } from 'bff/core';
+import { GetProdutoIdResult } from 'bff/types';
 
 export class ProdutoService {
-  async getProduto(product: string): Promise<ReturnGetProduct> {
-    const response = await stockAPI.getStockData(product);
+  async getProdutoId(product: string): Promise<GetProdutoIdResult> {
+    const response = await stockAPI.getStockData(product).catch((response) => {
+      throw apiErrorHandler(response.statusCode);
+    });
 
     //lógica para encontrar o produto.
     const selectedProduct = response.body.results[0];
 
-    const body: GetProduct = {
+    return {
       id: selectedProduct.id,
       title: selectedProduct.title,
       price: selectedProduct.price,
       thumbnail: selectedProduct.thumbnail,
-    };
-
-    return {
-      body,
-      statusCode: response.statusCode,
     };
   }
 
-  async postProduto(product: string): Promise<ReturnGetProduct> {
-    const response = await stockAPI.getStockData(product);//aqui tem q ser post
+  async postProduto(product: string): Promise<GetProdutoIdResult> {
+    const response = await stockAPI.getStockData(product).catch((response) => {
+      throw apiErrorHandler(response.statusCode);
+    }); //aqui tem q ser post
 
     //lógica para encontrar o produto.
     const selectedProduct = response.body.results[0];
 
-    const body: GetProduct = {
+    return {
       id: selectedProduct.id,
       title: selectedProduct.title,
       price: selectedProduct.price,
       thumbnail: selectedProduct.thumbnail,
-    };
-
-    return {
-      body,
-      statusCode: response.statusCode,
     };
   }
 
-  async updateProduto(product: string): Promise<ReturnGetProduct> {
-    const response = await stockAPI.getStockData(product);//aqui tem q ser update
+  async updateProduto(product: string): Promise<GetProdutoIdResult> {
+    const response = await stockAPI.getStockData(product).catch((response) => {
+      throw apiErrorHandler(response.statusCode);
+    }); //aqui tem q ser update
 
     //lógica para encontrar o produto.
     const selectedProduct = response.body.results[0];
 
-    const body: GetProduct = {
+    return {
       id: selectedProduct.id,
       title: selectedProduct.title,
       price: selectedProduct.price,
       thumbnail: selectedProduct.thumbnail,
-    };
-
-    return {
-      body,
-      statusCode: response.statusCode,
     };
   }
 
-  async deleteProduto(product: string): Promise<ReturnGetProduct> {
-    const response = await stockAPI.getStockData(product);//aqui tem q ser delete
+  async deleteProduto(product: string): Promise<GetProdutoIdResult> {
+    const response = await stockAPI.getStockData(product).catch((response) => {
+      throw apiErrorHandler(response.statusCode);
+    }); //aqui tem q ser delete
 
     //lógica para encontrar o produto.
     const selectedProduct = response.body.results[0];
 
-    const body: GetProduct = {
+    return {
       id: selectedProduct.id,
       title: selectedProduct.title,
       price: selectedProduct.price,
       thumbnail: selectedProduct.thumbnail,
-    };
-
-    return {
-      body,
-      statusCode: response.statusCode,
     };
   }
 }
