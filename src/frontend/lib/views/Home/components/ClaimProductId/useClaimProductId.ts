@@ -18,7 +18,7 @@ export const useClaimProductId = () => {
   const { errors } = formState;
 
   const handleClaimProductId = async (data: ClaimProductIdData) => {
-    !errors.productId && push(`/produto/${data.productId}`);
+    !errors.productId && push(`app/produto/${data.productId}`);
   };
 
   const msg = useMemo(
