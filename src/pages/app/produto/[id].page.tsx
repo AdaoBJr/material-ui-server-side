@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 
-import { product } from 'articles';
-import { Body, Title, Text, Row } from 'lib/shared';
-import { useProductId } from 'services/talons';
+import { product } from 'frontend/articles';
+import { useProductId } from 'frontend/services/talons';
+import { Body, Title, Text, Row } from 'frontend/lib/shared';
 import { SxContainerProductId, SxTitleProductId } from './syles';
 
 const formatCurrency = {

@@ -6,7 +6,7 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 
 import { SxApp } from './app.styles';
-import { theme, createEmotionCache } from 'theme';
+import { theme, createEmotionCache } from 'frontend/theme';
 
 const clientSideEmotionCache = createEmotionCache();
 

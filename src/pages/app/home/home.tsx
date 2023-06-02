@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { Box, Grid, Stack } from '@mui/material';
 
-import { home } from 'articles';
-import { Body, Title } from 'lib/shared';
+import { home } from 'frontend/articles';
+import { Body, Title } from 'frontend/lib/shared';
 import calendar from 'assets/images/calendar.png';
 import ClaimProductId from './components/ClaimProductId';
 import { SxTitleHome, SxSubTitleHome } from './styles';

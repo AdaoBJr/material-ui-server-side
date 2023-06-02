@@ -1,8 +1,8 @@
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { GetProduct } from 'types/domain';
-import { HttpResponse, useBFFVendas } from 'services/infra';
-import { useRouter } from 'next/router';
+import { GetProduct } from 'frontend/types/domain';
+import { HttpResponse, useBFFVendas } from 'frontend/services/infra';
 
 export const useProductId = () => {
   const { isReady, query } = useRouter();

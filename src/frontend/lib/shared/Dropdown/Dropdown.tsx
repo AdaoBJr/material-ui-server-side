@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuItem, TextField, Typography } from '@mui/material';
 
 import { SxDropdown } from './styles';
-import { DropdownProps } from 'types/shared';
+import { DropdownProps } from 'frontend/types/shared';
 
 export const Dropdown: React.FC<DropdownProps> = ({ name, options, ...rest }) => (
   <TextField name={name} {...rest} sx={SxDropdown} select>

@@ -1,7 +1,5 @@
-import { NextRouter } from 'next/router';
-
-import { GetProduct } from 'types/domain';
-import { apiBFF, AxiosHttpClient } from '../../api';
+import { apiBFF, AxiosHttpClient } from '../api';
+import { GetProduct } from 'frontend/types/domain';
 
 export const useBFFVendas = () => {
   const BFFClient = AxiosHttpClient(apiBFF);

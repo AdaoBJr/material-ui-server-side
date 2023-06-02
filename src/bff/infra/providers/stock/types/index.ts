@@ -1,1 +1,1 @@
-export * from './produtoStock';
+export * from './stockProvider';

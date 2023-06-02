@@ -2,8 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { ApiError } from 'bff/core';
 import { HttpStatusCode } from 'bff/infra';
-import { GetProdutoIdResult } from 'bff/types';
-import { deleteProduto, getProdutoId, postProduto, updateProduto } from 'bff/controllers';
+import { GetProdutoIdResult } from 'bff/types/response';
+import { findProdutoController } from 'bff/controllers';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -19,17 +19,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 async function requestHandler(
   req: NextApiRequest,
-  res: NextApiResponse<GetProdutoIdResult | ApiError>
+  res: NextApiResponse<GetProdutoIdResult | void | ApiError>
 ) {
   switch (req.method) {
     case 'GET':
-      return getProdutoId(req, res); //função vinda do controller
-    case 'POST':
-      return postProduto(req, res); //função vinda do controller
-    case 'PUT':
-      return updateProduto(req, res); //função vinda do controller
-    case 'DELETE':
-      return deleteProduto(req, res); //função vinda do controller
+      return findProdutoController.handler(req, res); //função vinda do controller
     default:
       return HttpStatusCode.methodNotAllowed;
   }

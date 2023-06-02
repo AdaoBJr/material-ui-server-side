@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { validation } from 'articles';
+import { validation } from 'frontend/articles';
 import { ClaimProductIdData, claimProductIdSchema } from './types';
 
 const defaultValues = { productId: '' };

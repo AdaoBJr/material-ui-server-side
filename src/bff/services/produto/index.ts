@@ -1,5 +1,6 @@
-import { ProdutoService } from "./produtoService";
+import { produtoStockProvider } from 'bff/infra';
+import { FindProdutoService } from './findProdutoService';
 
-const produtoService = new ProdutoService();
+const findProdutoService = new FindProdutoService(produtoStockProvider);
 
-export { produtoService };
+export { findProdutoService, FindProdutoService };

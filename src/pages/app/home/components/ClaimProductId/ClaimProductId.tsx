@@ -3,7 +3,7 @@ import { Box, Button, Grid, TextField } from '@mui/material';
 import { ArrowForward } from '@mui/icons-material';
 import { DevTool } from '@hookform/devtools';
 
-import { claim } from 'articles';
+import { claim } from 'frontend/articles';
 import { useClaimProductId } from './useClaimProductId';
 import { SxFormClaim, SxButtonClaim, SxInputClaim } from './styles';
 
