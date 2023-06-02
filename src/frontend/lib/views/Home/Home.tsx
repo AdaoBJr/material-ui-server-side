@@ -4,9 +4,9 @@ import { Box, Grid, Stack } from '@mui/material';
 
 import { home } from 'frontend/articles';
 import { Body, Title } from 'frontend/lib/shared';
-import calendar from 'assets/images/calendar.png';
-import ClaimProductId from './components/ClaimProductId';
 import { SxTitleHome, SxSubTitleHome } from './styles';
+import ClaimProductId from './components/ClaimProductId';
+import calendar from 'frontend/assets/images/calendar.png';
 
 const Home: React.FC = () => {
   return (

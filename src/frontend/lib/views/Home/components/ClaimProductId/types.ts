@@ -1,4 +1,4 @@
-import { validation } from 'articles';
+import { validation } from 'frontend/articles';
 import { z } from 'zod';
 
 export const claimProductIdSchema = z.object({

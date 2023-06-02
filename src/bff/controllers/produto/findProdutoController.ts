@@ -15,7 +15,7 @@ class FindProdutoController {
       const { query } = req;
       const produto = query.id as string;
 
-      const response = await this.findProdutoService.execute(produto);
+      const response = await this.findProdutoService.execute({ produto });
 
       res.status(200).json(response);
     } catch (e) {

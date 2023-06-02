@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { ApiError } from 'bff/core';
-import { HttpStatusCode } from 'bff/infra';
+import { HttpStatusCode } from 'bff/core';
 import { GetProdutoIdResult } from 'bff/types/response';
 import { findProdutoController } from 'bff/controllers';
 
