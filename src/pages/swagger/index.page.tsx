@@ -3,6 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { Box } from '@mui/material';
+import { getEnv } from 'environment';
 
 import 'swagger-ui-react/swagger-ui.css';
 /* @ts-ignore */
@@ -10,7 +11,11 @@ const SwaggerUI = dynamic<{ url: string }>(import('swagger-ui-react'), {
   ssr: false,
 });
 
-const swaggerFolder = path.resolve(__dirname, 'api', 'swagger');
+const env = getEnv();
+const swaggerFolder =
+  env.SERVER_ENV === 'local'
+    ? path.resolve(__dirname, 'api', 'swagger')
+    : '/swagger.json';
 
 const Swagger: React.FC = () => (
   <Box>
