@@ -8,4 +8,5 @@ export const SxBody: SxProps<Theme> = {
   padding: 5,
   width: '100%',
   height: '100%',
+  backgroundColor: 'grey.900',
 };
