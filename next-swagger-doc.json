@@ -3,7 +3,7 @@
   "definition": {
     "openapi": "3.0.0",
     "info": {
-      "title": "Swagger",
+      "title": "NextJS Swagger",
       "version": "1.0"
     }
   }
