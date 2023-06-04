@@ -10,7 +10,7 @@ const SwaggerUI = dynamic<{ url: string }>(import('swagger-ui-react'), {
   ssr: false,
 });
 
-const swaggerFolder = path.join(__dirname, 'api', 'swagger');
+const swaggerFolder = path.resolve(__dirname, 'api', 'swagger');
 
 const Swagger: React.FC = () => (
   <Box>

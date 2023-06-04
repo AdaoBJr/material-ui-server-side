@@ -2,8 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { withSwagger } from 'next-swagger-doc';
 
-// const pathApi = fs.readFileSync(path.join(__dirname, 'pages', 'api'), 'utf8');
-const apiFolder = path.join(__dirname, 'src', 'pages', 'api');
+const apiFolder = path.resolve(__dirname, 'src', 'pages', 'api');
 
 const swaggerHandler = withSwagger({
   definition: {
