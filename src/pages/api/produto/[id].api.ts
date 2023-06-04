@@ -5,6 +5,23 @@ import { HttpStatusCode } from 'bff/core';
 import { GetProdutoIdResult } from 'bff/types/response';
 import { findProdutoController } from 'bff/controllers';
 
+/**
+ * @swagger
+ * /api/produto/{id}:
+ *   get:
+ *     description: Será
+ *     parameters: [
+ *      {
+ *        name: id,
+ *        in: path,
+ *        required: true,
+ *        type: string
+ *      }
+ *     ]
+ *     responses:
+ *       200:
+ *         description: produto world
+ */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     await requestHandler(req, res);
