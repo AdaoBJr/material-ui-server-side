@@ -16,7 +16,7 @@ const env = getEnv();
 const swaggerFolder =
   env.SERVER_ENV === 'local'
     ? path.resolve(__dirname, 'api', 'swagger')
-    : './swagger.json';
+    : '/swagger.json';
 
 const Swagger: React.FC = () => (
   <Box>
