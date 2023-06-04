@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Swagger",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/hello": {
+      "get": {
+        "description": "Hello",
+        "responses": {
+          "200": {
+            "description": "produto world"
+          }
+        }
+      }
+    },
+    "/api/ola": {
+      "get": {
+        "description": "ola",
+        "responses": {
+          "200": {
+            "description": "ola world"
+          }
+        }
+      }
+    },
+    "/api/produto/{id}": {
+      "get": {
+        "description": "Será",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "produto world"
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": []
+}
