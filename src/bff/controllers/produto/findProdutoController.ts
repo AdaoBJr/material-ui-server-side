@@ -17,7 +17,7 @@ class FindProdutoController {
 
       const response = await this.findProdutoService.execute({ produto });
 
-      res.status(200).json(response);
+      res.status(response.status).json(response.data);
     } catch (e) {
       if (e instanceof ApiError) {
         res.status(e.status).send(e);

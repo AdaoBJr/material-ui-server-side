@@ -1,1 +1,1 @@
-export { default } from 'frontend/lib/views/Produto';
+export { default, getServerSideProps } from 'frontend/lib/views/Produto';

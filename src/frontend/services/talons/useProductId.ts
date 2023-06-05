@@ -6,7 +6,6 @@ import { HttpResponse, useBFFVendas } from 'frontend/services/infra';
 
 export const useProductId = () => {
   const { isReady, query } = useRouter();
-
   const { getProductData } = useBFFVendas();
   const [data, setData] = useState<HttpResponse<GetProduct> | null>(null);
   const [isLoading, setIsLoading] = useState(true);

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 
+import { ApiError } from 'bff/core';
 import { product } from 'frontend/articles';
-import { useProductId } from 'frontend/services/talons';
+import { GetProdutoIdService } from 'bff/types/response';
 import { Body, Title, Text, Row } from 'frontend/lib/shared';
 import { SxContainerProductId, SxTitleProductId } from './syles';
 
@@ -12,10 +13,14 @@ const formatCurrency = {
   style: 'currency',
   currency: 'BRL',
 };
-const ProductId: React.FC = () => {
-  const { isLoading, data } = useProductId();
 
-  if (isLoading) return <Title sx={SxTitleProductId}>Loading...</Title>;
+interface ProductIdProps extends GetProdutoIdService {}
+
+const ProductId: React.FC<ProductIdProps> = ({ data }) => {
+  // const { isLoading, data } = useProductId();
+
+  // if (isLoading) return <Title sx={SxTitleProductId}>Loading...</Title>;
+  if (data instanceof ApiError) return <Title sx={SxTitleProductId}>Error...</Title>;
   return (
     <Body>
       <Grid container spacing={10} sx={SxContainerProductId}>
@@ -26,13 +31,13 @@ const ProductId: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <Text variant="h6" textAlign={'center'}>
-            {data?.body.title}
+            {data?.title}
           </Text>
         </Grid>
         <Grid item xs={12}>
           <Row columnGap={6}>
             <Title variant="h6" children="Preço:" />
-            <Text>{data?.body.price.toLocaleString('pt-BR', formatCurrency)}</Text>
+            <Text>{data?.price.toLocaleString('pt-BR', formatCurrency)}</Text>
           </Row>
         </Grid>
       </Grid>
