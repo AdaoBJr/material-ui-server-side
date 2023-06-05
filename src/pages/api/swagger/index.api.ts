@@ -1,4 +1,8 @@
 import { withSwagger } from 'next-swagger-doc';
+import { getEnv } from 'environment';
+
+const env = getEnv();
+const apiFolder = env.SERVER_ENV === 'local' ? 'src/pages/api' : 'pages/api';
 
 const swaggerHandler = withSwagger({
   definition: {
@@ -8,6 +12,6 @@ const swaggerHandler = withSwagger({
       version: '0.1.0',
     },
   },
-  apiFolder: 'src/pages/api',
+  apiFolder,
 });
 export default swaggerHandler();
