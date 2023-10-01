@@ -1,6 +1,12 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-const Info = dynamic(() => import('info/ProductInfo'), { ssr: false });
+interface ProductProps {
+  produtoId: string;
+}
 
-export const ProductInfoApp: React.FC = () => <Info />;
+const Info = dynamic<ProductProps>(() => import('info/ProductInfo'), { ssr: false });
+
+export const ProductInfoApp: React.FC<ProductProps> = ({ produtoId }) => (
+  <Info produtoId={produtoId} />
+);
