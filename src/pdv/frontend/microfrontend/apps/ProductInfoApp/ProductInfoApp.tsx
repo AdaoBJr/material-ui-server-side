@@ -5,7 +5,10 @@ interface ProductProps {
   produtoId: string;
 }
 
-const Info = dynamic<ProductProps>(() => import('info/ProductInfo'), { ssr: false });
+const Info = dynamic<ProductProps>(() => import('info/ProductInfo'), {
+  // ssr: false,
+  // suspense: true,
+});
 
 export const ProductInfoApp: React.FC<ProductProps> = ({ produtoId }) => (
   <Info produtoId={produtoId} />
