@@ -1,1 +1,1 @@
-export { default } from 'frontend/lib/views/Home';
+export { default } from 'pdv/frontend/lib/views/Home';

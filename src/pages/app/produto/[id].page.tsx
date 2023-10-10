@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from 'frontend/lib/views/Produto';
+export { default, getServerSideProps } from 'pdv/frontend/lib/views/Produto';
